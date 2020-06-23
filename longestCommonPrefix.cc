@@ -5,6 +5,7 @@
 using namespace std;
 class Solution {
 public:
+/*找到最长公共前缀，每次比较也就是当前单词和当前公共前缀比较*/
     string longestCommonPrefix(vector<string>& strs) {
         string ret;
         for(int i = 0;i< strs.size(); ++i){
