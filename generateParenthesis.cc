@@ -3,7 +3,9 @@
 #include <string>
 
 using namespace  std;
-
+/* @main variables: left:  how mant left Parenthesis left,
+ *                  right: how many right Parenthesis left.
+ * */
 class Solution {
 public:
     vector<string> ret;
