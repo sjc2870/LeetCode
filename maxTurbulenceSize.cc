@@ -1,4 +1,5 @@
 #include <vector>
+#include <string.h>
 #include <stdio.h>
 #include <algorithm>
 
@@ -14,7 +15,9 @@ public:
         int len = arr.size();
         if(len == 1)
           return 1;
-        vector<int> dp(len,0);
+        /* vector<int> dp(len,0); */
+        int *dp = new int[len];
+        memset(dp,0,len*sizeof(int));
         dp[0] = 1;
         dp[1] = (arr[0]==arr[1] ? 1 : 2);
         for(int i = 2; i < len; ++i) {
@@ -23,7 +26,14 @@ public:
                dp[i] = std::max(dp[i], dp[i-1]+1);
            }
         }
-        return *(std::max_element(dp.begin(),dp.end()));
+        int ret = 1;
+        for(int i = 0; i < len; ++i) {
+            if(dp[i] > ret) {
+                ret = dp[i];
+            }
+        }
+        /* return *(std::max_element(dp.begin(),dp.end())); */
+        return ret;
     }
 };
 
