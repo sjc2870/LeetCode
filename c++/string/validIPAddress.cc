@@ -1,13 +1,17 @@
 #include <string>
 #include <iostream>
-#include <algorithm>
 #include <cctype>
 #include <cassert>
+#include <regex>
 
 using namespace std;
 
 class Solution {
 public:
+    string validIPAddress(string IP) {
+        regex ipv4("([0-9]|[1-9][0-9]|2[0-4])");
+    }
+    /*
     string validIPAddress(string IP) {
         if(IP.size() == 0)
             return "Neither";
@@ -59,7 +63,7 @@ public:
             return "IPv6";
         }
         return "Neither";
-    }
+    }*/
 };
 
 int main() {
